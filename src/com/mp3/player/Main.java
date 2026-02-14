@@ -268,6 +268,8 @@ public class Main {
 		exit.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				LOG.log.info("Exit menu - saving schedules");
+				SerializationUtil.doSave(scheduleMap);
 				System.exit(0);
 			}
 		});
@@ -400,6 +402,17 @@ public class Main {
 		borderPanel.add(centerPanelConstrain, BorderLayout.CENTER);
 
 		frame.getContentPane().add(borderPanel);
+
+		// Hide window on close (don't exit - app lives in system tray)
+		// Also save schedules when window is closed
+		frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+		frame.addWindowListener(new java.awt.event.WindowAdapter() {
+			@Override
+			public void windowClosing(java.awt.event.WindowEvent e) {
+				LOG.log.info("Window closing - saving schedules");
+				SerializationUtil.doSave(scheduleMap);
+			}
+		});
 
 		frame.pack();
 		frame.setLocationRelativeTo(null);

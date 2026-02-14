@@ -96,6 +96,19 @@ public class ConnectionStatusTray {
 					main.main(null);
 				}
 			});
+
+			// Safety net: save schedules on JVM shutdown (covers unexpected exits)
+			Runtime.getRuntime().addShutdownHook(new Thread() {
+				public void run() {
+					try {
+						if (Main.scheduleMap != null && !Main.scheduleMap.isEmpty()) {
+							SerializationUtil.doSave(Main.scheduleMap);
+						}
+					} catch (Exception e) {
+						// Best effort save
+					}
+				}
+			});
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -165,6 +178,8 @@ public class ConnectionStatusTray {
 		// Add listener to exitItem.
 		exitItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				LOG.log.info("Exiting - saving schedules");
+				SerializationUtil.doSave(Main.scheduleMap);
 				tray.remove(trayIcon);
 				LOG.log.info("Exiting the application.");
 				System.exit(0);
