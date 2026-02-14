@@ -1,0 +1,8 @@
+build/
+dist/
+nbproject/private/
+*.class
+*.ser
+*.log
+PlayTimer.txt
+.DS_Store
