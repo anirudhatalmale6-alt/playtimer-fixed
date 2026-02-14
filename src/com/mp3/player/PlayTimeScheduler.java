@@ -1,12 +1,8 @@
 package com.mp3.player;
 
-import jaco.mp3.player.MP3Player;
-
 import java.io.File;
-import java.io.IOException;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -15,7 +11,7 @@ public class PlayTimeScheduler  {
 
 	Timer timer;
 	String musicToPlay = "";
-	static MP3Player player = new MP3Player();
+	static SimpleMP3Player player = new SimpleMP3Player();
 	String startDate;
 
     public PlayTimeScheduler(String startdate, long seconds, String musicToPlay) {
@@ -43,11 +39,8 @@ public class PlayTimeScheduler  {
 
 	        	LOG.log.info("Music file exists, size: " + musicFile.length() + " bytes");
 	        	player.stop();
-	        	player.clearPlayList();
-	        	player.add(musicFile);
-	            player.setRepeat(false);
-	            player.play();
-	            LOG.log.info("player.play() called successfully");
+	        	player.playFile(musicFile);
+	            LOG.log.info("player.playFile() called successfully");
         	} catch (Exception e) {
         		LOG.log.error("Error playing music: " + e.getMessage());
         		e.printStackTrace();
