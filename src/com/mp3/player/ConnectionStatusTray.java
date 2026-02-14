@@ -41,13 +41,20 @@ public class ConnectionStatusTray {
 	public static void main(String[] args) {
 
 		try {
-			
+
+			// Fix working directory: when Windows auto-starts the app,
+			// the working directory may be C:\Windows\System32 instead
+			// of the app's directory. This causes PlayTimer.ser, config.properties,
+			// and other relative-path files to not be found.
+			// Solution: detect app directory and store it for all file operations.
+			initAppHome();
+
 			if(!isAppAlreadyRunning()){
 
 				JOptionPane.showMessageDialog(null,
-						"Programi osht i qelun o jaran!");	
+						"Programi osht i qelun o jaran!");
 		       System.exit(0);
-		    } 
+		    }
 			
 			try {
 			    for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
@@ -166,11 +173,55 @@ public class ConnectionStatusTray {
 	}
 
 	
+	/**
+	 * App home directory - where PlayTimer.ser, config.properties etc. live.
+	 */
+	static String appHome = null;
+
+	/**
+	 * Detect the app's installation directory from the JAR/class location.
+	 * When launched from Windows startup, CWD may be System32.
+	 */
+	private static void initAppHome() {
+		try {
+			String jarPath = ConnectionStatusTray.class.getProtectionDomain()
+					.getCodeSource().getLocation().toURI().getPath();
+			File jarFile = new File(jarPath);
+			File appDir = jarFile.isDirectory() ? jarFile : jarFile.getParentFile();
+			// If running from NetBeans build/classes, go up to project root
+			if (appDir.getName().equals("classes")) {
+				File buildDir = appDir.getParentFile();
+				if (buildDir != null && buildDir.getName().equals("build")) {
+					appDir = buildDir.getParentFile();
+				}
+			}
+			// If running from bin/ (Eclipse output), go up to project root
+			if (appDir.getName().equals("bin")) {
+				appDir = appDir.getParentFile();
+			}
+			appHome = appDir.getAbsolutePath();
+		} catch (Exception e) {
+			appHome = System.getProperty("user.dir");
+		}
+	}
+
+	/**
+	 * Get a File object relative to the app's home directory.
+	 * Use this instead of new File("relative") to ensure correct paths
+	 * when the app is auto-started by Windows.
+	 */
+	public static File getAppFile(String relativePath) {
+		if (appHome == null) {
+			return new File(relativePath);
+		}
+		return new File(appHome, relativePath);
+	}
+
 	private static boolean isAppAlreadyRunning() {
 	    // socket concept is shown at http://www.rbgrn.net/content/43-java-single-application-instance
 	    // but this one is really great
 	    try {
-	        final File file = new File("PlayTimer.txt");
+	        final File file = getAppFile("PlayTimer.txt");
 	        final RandomAccessFile randomAccessFile = new RandomAccessFile(file, "rw");
 	        final FileLock fileLock = randomAccessFile.getChannel().tryLock();
 	        if (fileLock != null) {

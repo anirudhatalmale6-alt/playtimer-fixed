@@ -20,7 +20,8 @@ public class SerializationUtil {
 	public static void doSave(Map<String, List<ScheduleTime>> time) {
 		try {
 			
-			FileOutputStream fileOut = new FileOutputStream("PlayTimer.ser");
+			FileOutputStream fileOut = new FileOutputStream(
+					ConnectionStatusTray.getAppFile("PlayTimer.ser"));
 			ObjectOutputStream out = new ObjectOutputStream(fileOut);
 			LOG.log.info("Writing to PlayTimer.ser...");
 
@@ -50,7 +51,8 @@ public class SerializationUtil {
 		ObjectInputStream in = null;
 		
 		try {
-			fileIn = new FileInputStream("PlayTimer.ser");
+			fileIn = new FileInputStream(
+					ConnectionStatusTray.getAppFile("PlayTimer.ser"));
 			in = new ObjectInputStream(fileIn);
 
 			LOG.log.info("Loading PlayTimer.ser Object...");

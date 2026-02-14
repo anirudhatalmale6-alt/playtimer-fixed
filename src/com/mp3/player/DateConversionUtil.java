@@ -34,7 +34,11 @@ public class DateConversionUtil {
 		 
     	try {
                //load a properties file
-    		prop.load(new FileInputStream("config.properties"));
+    		File configFile = ConnectionStatusTray.getAppFile("config.properties");
+    		if (!configFile.exists()) {
+    			configFile = new File("config.properties");
+    		}
+    		prop.load(new FileInputStream(configFile));
     		//get the property value and print it out
 //            System.out.println(prop.getProperty("filepath"));
     		

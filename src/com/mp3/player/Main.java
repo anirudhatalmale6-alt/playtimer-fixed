@@ -198,7 +198,7 @@ public class Main {
 		controller.getjCheckBox1().addItemListener(itemListener);
 		controller.getjCheckBox2().addItemListener(itemListener);
 
-		File serFile = new File("PlayTimer.ser");
+		File serFile = ConnectionStatusTray.getAppFile("PlayTimer.ser");
 
 		if (serFile.exists()) {
 
