@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2014-01-04T16:41:13</date>
+  <millis>1388833873458</millis>
+  <sequence>0</sequence>
+  <logger>log_file</logger>
+  <level>WARNING</level>
+  <class>com.mp3.player.QuintLog</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Doing carefully!</message>
+</record>
+<record>
+  <date>2014-01-04T16:41:13</date>
+  <millis>1388833873550</millis>
+  <sequence>1</sequence>
+  <logger>log_file</logger>
+  <level>INFO</level>
+  <class>com.mp3.player.QuintLog</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Doing something ...</message>
+</record>
+<record>
+  <date>2014-01-04T16:41:13</date>
+  <millis>1388833873552</millis>
+  <sequence>2</sequence>
+  <logger>log_file</logger>
+  <level>SEVERE</level>
+  <class>com.mp3.player.QuintLog</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Doing strictily </message>
+</record>
+</log>
