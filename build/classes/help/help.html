@@ -1,0 +1,219 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<title>Control Panel Help</title>
+<link rel=stylesheet type="text/css" href="css.css">
+</HEAD>
+
+<body bgcolor="#EDEDED">
+<center>
+<a name="top"><H2>Control Panel Help</H2></a>
+</center>
+<p>
+The control panel allows you to define, test and save TinyLaF themes. A <em>theme</em> is simply a collection of properties.
+</p>
+<br>
+<b>Content</b><br>
+&nbsp;&nbsp;<a href="#load">Loading Themes</a><br>
+&nbsp;&nbsp;<a href="#save">Saving Themes</a><br>
+&nbsp;&nbsp;<a href="#fonts">Specifying Fonts</a><br>
+&nbsp;&nbsp;<a href="#colorrefs">Reference Colors</a><br>
+&nbsp;&nbsp;<a href="#colors">Specifying Colors</a><br>
+&nbsp;&nbsp;<a href="#icons">Colorizing Icons</a><br>
+&nbsp;&nbsp;<a href="#copy">Copying Parameters</a><br>
+&nbsp;&nbsp;<a href="#undo">Undo/Redo</a><br>
+&nbsp;&nbsp;<a href="#additional">Additional Resources</a><br>
+<br>
+
+<a name="load"></a>
+<br>
+<b>Loading Themes</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#top">Top of page</a>
+<br><br>
+To load a theme, either select it from the 'Themes' menu or choose 'File | Open Theme...' to load some <code>.theme</code> file from your file system.
+<table border=0 cellpadding=0 cellspacing=8>
+<tr><td>
+<img src="images/themesmenu.gif" width=97 height=61 border=0>
+</td><td>
+<img src="images/fileload.gif" width=211 height=61 border=0>
+</td></tr>
+</table>
+<br><hr>
+
+<a name="save"></a>
+<br>
+<b>Saving Themes</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#top">Top of page</a>
+<br><br>
+Select 'File | Save' or 'File | Save as...'. 'File | Save as Default' will save the current theme as '<code>Default.theme</code>'.
+<table border=0 cellpadding=0 cellspacing=8>
+<tr><td>
+<img src="images/filesave.gif" width=211 height=100 border=0>
+</td></tr>
+</table>
+<br><hr>
+
+<a name="fonts"></a>
+<br>
+<b>Specifying Fonts</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#top">Top of page</a>
+<br><br>
+Click the 'Fonts' tab to display the fonts editor. The 'Plain Font' and 'Bold Font' sections should be self-explaining, from interest is the 'Special Font' section.
+<br><br>
+There are 23 different fonts you can specify, each registered for a different kind of component or group of components ('Button Font', for example, is applied to <code>JButton</code>s and <code>JToggleButton</code>s). For a Special Font you can specify that either the plain font or bold font shall be used or you can specify the font family, size and style. For some Special Fonts you can additionally specify the text color (see <a href="#colors">Specifying Colors</a>).
+<table border=0 cellpadding=0 cellspacing=8>
+<tr><td>
+<img src="images/fontwidget.png" width=584 height=191 border=0>
+</td></tr>
+</table>
+<br><hr>
+
+<a name="colorrefs"></a>
+<br>
+<b>Reference Colors</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#top">Top of page</a>
+<br><br>
+All colors defined for a TinyLaF theme are either <em>absolute</em> colors or are derived from a <em>reference color</em>.
+<br><br>
+Click the 'Colors' tab to see all reference colors. The colors in the first row are <em>absolute</em> colors, by clicking inside the colored rectangle you open a color chooser. The following colors ('Sub1 Color' to 'Sub8 Color') can be absolute colors or can be <em>derived</em> from a reference color, but with different settings for brightness and saturation (see the <a href="#colors">next section</a> about specifying derived colors).
+<table border=0 cellpadding=0 cellspacing=8>
+<tr><td>
+<img src="images/colorrefs.png" width=326 height=151 border=0>
+</td></tr>
+</table>
+<br><hr>
+
+<a name="colors"></a>
+<br>
+<b>Specifying Colors</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#top">Top of page</a>
+<br><br>
+You specify colors using the color widget.
+<table border=0 cellpadding=0 cellspacing=8>
+<tr><td>
+<img src="images/colorwidget.png" width=562 height=86 border=0>
+</td></tr>
+</table>
+<table border=0 cellpadding=0 cellspacing=1>
+<tr><td valign=top>
+&nbsp;&nbsp;-&nbsp;
+</td><td>
+On rollover you see the current parameter settings. A color is defined through its <em>reference</em> color and values for brightness and saturation.
+</td></tr>
+<tr><td valign=top>
+&nbsp;&nbsp;-&nbsp;
+</td><td>
+If you click inside the grey rectangle at the left, a popup menu is displayed, allowing you to copy parameters from one color widget to another.
+</td></tr>
+<tr><td valign=top>
+&nbsp;&nbsp;-&nbsp;
+</td><td>
+If you click inside the rectangle at the right, a popup menu is displayed, allowing you to choose the reference color or an absolute color.
+</td></tr>
+<tr><td valign=top>
+&nbsp;&nbsp;-&nbsp;
+</td><td>
+The center rectangle shows the current color. Clicking it opens the 'Saturation/Brightness' dialog.
+</td></tr>
+</table>
+<table border=0 cellpadding=0 cellspacing=8>
+<tr><td>
+<img src="images/sbdialog.png" width=465 height=216 border=0>
+</td></tr>
+</table>
+<br><hr>
+
+<a name="icons"></a>
+<br>
+<b>Colorizing Icons</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#top">Top of page</a>
+<br><br>
+At 'Decoration | Icons' you find widgets allowing you to colorize the provided icon set.
+<table border=0 cellpadding=0 cellspacing=8>
+<tr><td>
+<img src="images/hsbwidget.png" width=541 height=88 border=0>
+</td></tr>
+</table>
+<table border=0 cellpadding=0 cellspacing=1>
+<tr><td valign=top>
+&nbsp;&nbsp;-&nbsp;
+</td><td>
+On rollover you see the current parameter settings.
+</td></tr>
+<tr><td valign=top>
+&nbsp;&nbsp;-&nbsp;
+</td><td>
+If you click inside the grey rectangle at the left, a popup menu is displayed, allowing you to copy parameters from one widget to another.
+</td></tr>
+<tr><td valign=top>
+&nbsp;&nbsp;-&nbsp;
+</td><td>
+If you click inside the rectangle at the right, a popup menu is displayed, allowing you to choose the reference color.
+</td></tr>
+<tr><td valign=top>
+&nbsp;&nbsp;-&nbsp;
+</td><td>
+The center rectangle shows the current color. Clicking it opens the 'Hue/Saturation/Brightness' dialog.
+</td></tr>
+</table>
+<table border=0 cellpadding=0 cellspacing=8>
+<tr><td>
+<img src="images/hsbdialog.png" width=448 height=272 border=0>
+</td></tr>
+</table>
+<table border=0 cellpadding=0 cellspacing=0>
+<tr><td>
+&nbsp;&nbsp;
+</td><td>
+Adjust Hue, Saturation and Brightness as you like. Selecting the 'Preserve grey values' checkbox means that the Brightness setting doesn't affect <em>&quot;grey&quot;</em> colors (colors with equal amounts of red, green and blue).
+</td></tr>
+</table>
+<br>
+<em>Note:</em> Alternatively to colorizing icons, you can create your own icon set. Simply replace one or more icons in directory <code>.../TinyLaF/de/muntjak/tinylookandfeel/icons</code> and rebuild <code>tinylaf.jar</code>.
+<br><br><hr>
+
+<a name="copy"></a>
+<br>
+<b>Copying Parameters</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#top">Top of page</a>
+<br><br>
+At <a href="#colors">Specifying Colors</a> you already learned how to copy color parameters <em>from one color widget to another</em>.
+<br><br>
+There are two additional mechanisms to copy parameters <em>from one theme to another</em>:
+<ul>
+<li><b>Copy parameter sets</b>
+<br>
+<table border=0 cellpadding=0 cellspacing=4>
+<tr><td>
+<img src="images/copypaste.gif" width=30 height=58 border=0>
+</td><td>
+At the top/right corner of each 'Decoration' panel there are two buttons allowing you to copy and paste parameter sets. By clicking the upper button you copy parameters (each 'Decoration' panel stores its own parameter set). Clicking the lower button will paste the stored parameter set.
+</td></tr>
+</table>
+<em>Note:</em> When copying, for example, parameters of the 'Decoration | Button' panel, the fonts for buttons, checkboxes and radio buttons will be part of the parameter set (as well as all flags, insets and so on).
+<br><br>
+
+<li><b>Copy selected parameters</b><br>
+To create a selection of parameters, <code>Control-click</code> any of the following widgets:<br>
+<table border=0 cellpadding=0 cellspacing=4>
+<tr><td>
+<img src="images/selection.png" width=300 height=36 border=0>
+</td></tr>
+</table>
+<em>Note:</em> A selection can even include <a href="#colorrefs">Reference Colors</a>.
+</ul>
+<hr>
+
+<a name="undo"></a>
+<br>
+<b>Undo/Redo</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#top">Top of page</a>
+<br><br>
+With the exception of loading themes, you can undo/redo each action. There's an unlimited number of undo buffers. Each time you load another theme, undo buffers are cleared.<br>
+<table border=0 cellpadding=0 cellspacing=8>
+<tr><td>
+<img src="images/menuundo.png" width=252 height=63 border=0>
+</td></tr>
+</table>
+<br><hr>
+
+<a name="additional"></a>
+<br>
+<b>Additional Resources</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#top">Top of page</a>
+<br><br>
+<code>readme.html</code> describes how to set the look and feel, how to specify the default theme, how to switch themes and more. To view the TinyLaF javadoc documentation, start at <code>docs/index.html</code>.<br><br><hr>
+
+</BODY>
+</HTML>

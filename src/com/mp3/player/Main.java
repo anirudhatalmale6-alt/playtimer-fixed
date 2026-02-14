@@ -151,19 +151,19 @@ public class Main {
 								"h:mm:ss a"));
 
 		((DefaultEditor) controller.getjSpinner1().getEditor()).getTextField()
-				.setEditable(false);
+				.setEditable(true);
 		((DefaultEditor) controller.getjSpinner2().getEditor()).getTextField()
-				.setEditable(false);
+				.setEditable(true);
 		((DefaultEditor) controller.getjSpinner3().getEditor()).getTextField()
-				.setEditable(false);
+				.setEditable(true);
 		((DefaultEditor) controller.getjSpinner4().getEditor()).getTextField()
-				.setEditable(false);
+				.setEditable(true);
 		((DefaultEditor) controller.getjSpinner5().getEditor()).getTextField()
-				.setEditable(false);
+				.setEditable(true);
 		((DefaultEditor) controller.getjSpinner6().getEditor()).getTextField()
-				.setEditable(false);
+				.setEditable(true);
 		((DefaultEditor) controller.getjSpinner7().getEditor()).getTextField()
-				.setEditable(false);
+				.setEditable(true);
 
 		controller.getjButton1().setActionCommand("Browse1");
 		controller.getjButton1().addActionListener(listener);
